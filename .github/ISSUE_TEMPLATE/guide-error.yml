@@ -1,0 +1,59 @@
+name: Guide error
+description: Report a mistake, outdated content, a broken code sample or a dead link in a guide.
+title: "[Error]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the guide. Please check open issues first so the same problem is not reported twice.
+  - type: input
+    id: location
+    attributes:
+      label: Where is the error?
+      description: The section heading, stage or file, plus a link if you have one.
+      placeholder: "Stage 3 > Routing > Lazy loading"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of error
+      options:
+        - Wrong or misleading explanation
+        - Code sample does not work
+        - Outdated API or version
+        - Broken link or image
+        - Typo or formatting
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Quote the text or paste the code that is incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say?
+      description: The correct explanation or code, with a source if you have one.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Tool or library version
+      description: The version you tested with, if relevant.
+      placeholder: "e.g. Node 22.11, Angular 21.2"
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to open a pull request to fix this.
+          required: false

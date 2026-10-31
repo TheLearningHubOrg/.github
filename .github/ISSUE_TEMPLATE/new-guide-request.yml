@@ -1,0 +1,61 @@
+name: New guide request
+description: Suggest a topic for a new guide in The Learning Hub.
+title: "[Guide request]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the [organization profile](https://github.com/TheLearningHubOrg) first to see whether the topic is already covered. If an existing guide is missing a section, open an issue in that guide's repository instead.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: The tool, language or concept the guide would cover.
+      placeholder: "e.g. Temporal, OpenTelemetry, Bevy"
+    validations:
+      required: true
+  - type: dropdown
+    id: discipline
+    attributes:
+      label: Discipline
+      options:
+        - AI, LLMs and agents
+        - Frontend and UI frameworks
+        - Backend, APIs and runtimes
+        - Databases, caching and BaaS
+        - DevOps, cloud and infrastructure
+        - Programming languages
+        - Testing, protocols and web security
+        - System design and computer science
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this guide needed?
+      description: Who would use it, and what gap does it fill?
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Suggested outline
+      description: Optional. Topics you would expect in each of the 7 stages.
+    validations:
+      required: false
+  - type: textarea
+    id: resources
+    attributes:
+      label: Official resources
+      description: Links to the official documentation or specification.
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to help write this guide.
+          required: false
